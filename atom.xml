@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cbirdq`s blog</title>
+  <subtitle>I can play</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-04-10T16:57:18.612Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>cbirdq</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一、 git简介</title>
+    <link href="http://yoursite.com/2016/04/10/git%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2016/04/10/git简介/</id>
+    <published>2016-04-10T15:12:29.000Z</published>
+    <updated>2016-04-10T16:57:18.612Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;什么是git&quot;&gt;&lt;a href=&quot;#什么是git&quot; class=&quot;headerlink&quot; title=&quot;什么是git?&quot;&gt;&lt;/a&gt;什么是git?&lt;/h3&gt;&lt;p&gt;git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（只花了两周的时间，厉害！），初衷是为了管理Linux内核源码，后来迅速成为最流行的分布式版本控制系统，特别是2008年，GitHub网站上线并为开源项目提供免费的git存储，无数开源项目开始迁移到GitHub上，包括jQuery，PHP，Ruby等等。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;git有什么特点？&quot;&gt;&lt;a href=&quot;#git有什么特点？&quot; class=&quot;headerlink&quot; title=&quot;git有什么特点？&quot;&gt;&lt;/a&gt;git有什么特点？&lt;/h3&gt;&lt;p&gt;分支合并模型&lt;br&gt;小而快&lt;br&gt;分布式&lt;br&gt;数据安全&lt;br&gt;暂存区&lt;br&gt;免费而开源&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是git&quot;&gt;&lt;a href=&quot;#什么是git&quot; class=&quot;headerlink&quot; title=&quot;什么是git?&quot;&gt;&lt;/a&gt;什么是git?&lt;/h3&gt;&lt;p&gt;git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（只花了两周的时间，厉害！），初衷是为了管理Linux内核源码，后来迅速成为最流行的分布式版本控制系统，特别是2008年，GitHub网站上线并为开源项目提供免费的git存储，无数开源项目开始迁移到GitHub上，包括jQuery，PHP，Ruby等等。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git学习笔记" scheme="http://yoursite.com/categories/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+</feed>
