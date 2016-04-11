@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Cbirdq`s blog">
 <meta property="og:description" content="什么是git?git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。">
 <meta property="og:image" content="http://yoursite.com/../../../../images/git_1.jpg">
-<meta property="og:updated_time" content="2016-04-11T15:50:28.765Z">
+<meta property="og:updated_time" content="2016-04-11T15:52:47.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一、 git简介">
 <meta name="twitter:description" content="什么是git?git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。">
@@ -319,8 +319,7 @@
       
         <h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git?"></a>什么是git?</h2><p>git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。<br><a id="more"></a></p>
 <h2 id="git的优势？"><a href="#git的优势？" class="headerlink" title="git的优势？"></a>git的优势？</h2><p><strong>1. 版本库本地化，支持离线提交，相对独立，不影响协同开发。</strong><br>每个开发者都拥有自己的版本控制库，在自己的版本控制库上可以任意地执行提交代码、回滚代码、创建分支、归并分支等操作。因为是在自己的版本库上操作，所以不用担心会影响到其他的开发者。<br><strong>2. 更少的仓库污染。</strong><br>git对于每个工程只会产生一个.git目录，这个工程所有的版本控制信息都在.git目录下，不会像svn那样在每个目录下都产生.svn目录。<br><strong>3. 把内容按元数据方式存储，完整克隆版本库。</strong><br>所有的版本信息都在.git目录中，它是处于你的机器上的一个克隆版的版本库，它拥有中心版本库所有的东西，例如标签、分支、版本记录等。<br><strong>4. 支持快速切换分支，且合并速度快。</strong><br><strong>5. 分布式版本库，无单点故障，内容完整性好。</strong><br>内容存储采用的是SHA1-哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。  </p>
-<h2 id="分布式VS集中式"><a href="#分布式VS集中式" class="headerlink" title="分布式VS集中式"></a>分布式VS集中式</h2><p>集中式版本控制系统，版本库是集中放在中央服务器上的，而干活时用的都是各自的电脑，所有要先从中央服务器上取得最新的版本，然后开始干活，完了再把代码推送到中央服务器上。集中式版本控制系统最大的毛病就是必须联网才能工作。如果是局域网还好，带宽够大，速度够快，可是如果在互联网上，就可能网速很慢。  </p>
-<p><div style="background:url(../../../../images/git_1.jpg) no-repeat"><br><img src="../../../../images/git_1.jpg" width="50px" height="50px"></div></p>
+<h2 id="分布式VS集中式"><a href="#分布式VS集中式" class="headerlink" title="分布式VS集中式"></a>分布式VS集中式</h2><p>集中式版本控制系统，版本库是集中放在中央服务器上的，而干活时用的都是各自的电脑，所有要先从中央服务器上取得最新的版本，然后开始干活，完了再把代码推送到中央服务器上。集中式版本控制系统最大的毛病就是必须联网才能工作。如果是局域网还好，带宽够大，速度够快，可是如果在互联网上，就可能网速很慢。<br><img src="../../../../images/git_1.jpg" align="left"></p>
 
       
     </div>
