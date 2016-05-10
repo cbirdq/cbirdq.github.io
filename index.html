@@ -251,6 +251,497 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/26/并发编程的挑战/" itemprop="url">
+                  并发编程的挑战
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-26T12:47:15+08:00" content="2016-04-26">
+              2016-04-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java并发编程的艺术/" itemprop="url" rel="index">
+                    <span itemprop="name">java并发编程的艺术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/26/并发编程的挑战/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/并发编程的挑战/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文主要介绍几种并发编程可能会遇到的挑战，及其解决方案   </p>
+<h3 id="1-上下文切换"><a href="#1-上下文切换" class="headerlink" title="1. 上下文切换"></a>1. 上下文切换</h3><p>cpu通过时间片分配算法来循环执行线程，当前线程时间片用完后就会切换到下一线程。但是在切换之前，必须先保存当前线程的上下文，然后再加载下一个线程的上下文，称为上下文的切换。频繁的上下文切换会导致程序的执行效率低下。</p>
+<p><strong>解决方案：</strong>减少上下文切换的方法有<strong>无锁并发编程，CAS算法，使用最少线程，协程</strong></p>
+<ul>
+<li>无锁并发编程：多线程在竞争锁时会引起上下文的切换。所以多线程在处理数据时，可以用一些方法来避免使用锁，比如讲数据的ID按照Hash算法取模分段，不同的线程处理不同段的数据。  </li>
+<li>CAS算法：java的原子并发包使用的是CAS算法来更新数据，不需要加锁。</li>
+<li>使用最少线程：避免创建不需要的线程，比如任务很少，但是创建了很多线程，这就会导致大量线程都处于等待状态。</li>
+<li>协程：在单线程里实现多任务的调度，并在单线程里维持多任务间的切换。  </li>
+</ul>
+<h3 id="2-死锁"><a href="#2-死锁" class="headerlink" title="2. 死锁"></a>2. 死锁</h3><p>死锁产生的一种情况就是两个线程之间互相等待对方释放锁。<br><strong>解决方案：</strong></p>
+<ul>
+<li>尽量避免一个线程同时获取多个锁</li>
+<li>避免线程在锁内部同时占用多个资源，尽量保证一个锁只占用一个资源</li>
+<li>尝试使用定时锁，使用lock.tryLock(timeout)来代替内部锁机制</li>
+<li>对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。</li>
+</ul>
+<h3 id="3-资源限制的挑战"><a href="#3-资源限制的挑战" class="headerlink" title="3. 资源限制的挑战"></a>3. 资源限制的挑战</h3><p>资源限制是指在进行并发编程时，程序的执行速度受限于计算机硬件资源或软件资源。例如服务器的带宽只有2Mb/s，某个资源的下载速度是1Mb/s，系统启动10线程下载资源，下载速度并不会达到10Mb/s。硬件资源的限制有带宽的上传/下载速度，硬盘读写速度和cpu的处理速度等，软件资源的限制有数据库连接数和socket连接数等。<br><strong>解决方案：</strong></p>
+<ul>
+<li>对于硬件资源的限制，可以考虑使用集群并行执行程序</li>
+<li>对于软件资源的限制，可以考虑使用资源池将资源复用，比如数据库连接池等。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/git-remote的用法/" itemprop="url">
+                  git remote的用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T00:21:10+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/16/git-remote的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/git-remote的用法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##查看当前远程仓库</p>
+<ol>
+<li><p>git remote<br>不带参数，列出已经存在的远程分支  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote   </span><br><span class="line">origin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git remote -v | –verbose<br>列出详细信息，在每个远程分支的名字后面列出远程url  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v  </span><br><span class="line">origin git@github.com:cbirdq/learngit.git (fetch)  </span><br><span class="line">origin git@github.com:cbirdq/learngit.git （push)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><p>git remote add [shortname]<br>要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git remote  </span><br><span class="line">origin  </span><br><span class="line">$ git remote add pp git://github.com/cbirdq/iprinter.git  </span><br><span class="line">$ git remote -v  </span><br><span class="line">pp git://github.com/cbirdq/iprinter.git</span><br></pre></td></tr></table></figure></p>
+<p>现在就可以通过字符串pp代表远程仓库了，比如说要抓取本地仓库没有的信息，可以运行 git fetch pp.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch pp</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/15/OpenLayers3之Map/" itemprop="url">
+                  OpenLayers3之Map
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-15T00:25:27+08:00" content="2016-04-15">
+              2016-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/OpenLayers3/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenLayers3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/15/OpenLayers3之Map/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/OpenLayers3之Map/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>## </p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/14/OpenLayers3简介/" itemprop="url">
+                  OpenLayers3简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-14T10:46:01+08:00" content="2016-04-14">
+              2016-04-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/OpenLayers3/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenLayers3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/14/OpenLayers3简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/14/OpenLayers3简介/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>OpenLayers3(OL3)引入了现代的设计模式，重写了OpenLayers的网页地图库。<br>OL3初始版本的目标是支持版本2提供的大部分功能，采用了大量的商业或者免费的图层资源，最流行的开源vector数据格式。和版本2一样，OL3也支持任何的数据映射方式，同时它还提供了一些额外的功能，例如旋转和动画效果。在之后的版本中，OL3还会加入一些主要的新功能，如3D地图的显示，或者使用WebGL快速显示大量矢量数据。  </p>
+<h2 id="闭包工具"><a href="#闭包工具" class="headerlink" title="闭包工具"></a>闭包工具</h2><p>OL3是基于google闭包工具集开发的，它大量使用了闭包库。  </p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/12/qq互联/" itemprop="url">
                   qq互联
                 </a>
@@ -506,7 +997,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -514,7 +1005,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

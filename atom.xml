@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-11T17:07:31.488Z</updated>
+  <updated>2016-05-10T12:23:44.820Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,123 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>并发编程的挑战</title>
+    <link href="http://yoursite.com/2016/04/26/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E6%8C%91%E6%88%98/"/>
+    <id>http://yoursite.com/2016/04/26/并发编程的挑战/</id>
+    <published>2016-04-26T04:47:15.000Z</published>
+    <updated>2016-05-10T12:23:44.820Z</updated>
+    
+    <content type="html">&lt;p&gt;本文主要介绍几种并发编程可能会遇到的挑战，及其解决方案   &lt;/p&gt;
+&lt;h3 id=&quot;1-上下文切换&quot;&gt;&lt;a href=&quot;#1-上下文切换&quot; class=&quot;headerlink&quot; title=&quot;1. 上下文切换&quot;&gt;&lt;/a&gt;1. 上下文切换&lt;/h3&gt;&lt;p&gt;cpu通过时间片分配算法来循环执行线程，当前线程时间片用完后就会切换到下一线程。但是在切换之前，必须先保存当前线程的上下文，然后再加载下一个线程的上下文，称为上下文的切换。频繁的上下文切换会导致程序的执行效率低下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;减少上下文切换的方法有&lt;strong&gt;无锁并发编程，CAS算法，使用最少线程，协程&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无锁并发编程：多线程在竞争锁时会引起上下文的切换。所以多线程在处理数据时，可以用一些方法来避免使用锁，比如讲数据的ID按照Hash算法取模分段，不同的线程处理不同段的数据。  &lt;/li&gt;
+&lt;li&gt;CAS算法：java的原子并发包使用的是CAS算法来更新数据，不需要加锁。&lt;/li&gt;
+&lt;li&gt;使用最少线程：避免创建不需要的线程，比如任务很少，但是创建了很多线程，这就会导致大量线程都处于等待状态。&lt;/li&gt;
+&lt;li&gt;协程：在单线程里实现多任务的调度，并在单线程里维持多任务间的切换。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-死锁&quot;&gt;&lt;a href=&quot;#2-死锁&quot; class=&quot;headerlink&quot; title=&quot;2. 死锁&quot;&gt;&lt;/a&gt;2. 死锁&lt;/h3&gt;&lt;p&gt;死锁产生的一种情况就是两个线程之间互相等待对方释放锁。&lt;br&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尽量避免一个线程同时获取多个锁&lt;/li&gt;
+&lt;li&gt;避免线程在锁内部同时占用多个资源，尽量保证一个锁只占用一个资源&lt;/li&gt;
+&lt;li&gt;尝试使用定时锁，使用lock.tryLock(timeout)来代替内部锁机制&lt;/li&gt;
+&lt;li&gt;对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-资源限制的挑战&quot;&gt;&lt;a href=&quot;#3-资源限制的挑战&quot; class=&quot;headerlink&quot; title=&quot;3. 资源限制的挑战&quot;&gt;&lt;/a&gt;3. 资源限制的挑战&lt;/h3&gt;&lt;p&gt;资源限制是指在进行并发编程时，程序的执行速度受限于计算机硬件资源或软件资源。例如服务器的带宽只有2Mb/s，某个资源的下载速度是1Mb/s，系统启动10线程下载资源，下载速度并不会达到10Mb/s。硬件资源的限制有带宽的上传/下载速度，硬盘读写速度和cpu的处理速度等，软件资源的限制有数据库连接数和socket连接数等。&lt;br&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于硬件资源的限制，可以考虑使用集群并行执行程序&lt;/li&gt;
+&lt;li&gt;对于软件资源的限制，可以考虑使用资源池将资源复用，比如数据库连接池等。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要介绍几种并发编程可能会遇到的挑战，及其解决方案   &lt;/p&gt;
+&lt;h3 id=&quot;1-上下文切换&quot;&gt;&lt;a href=&quot;#1-上下文切换&quot; class=&quot;headerlink&quot; title=&quot;1. 上下文切换&quot;&gt;&lt;/a&gt;1. 上下文切换&lt;/h3&gt;&lt;p&gt;cpu通过时间片分配
+    
+    </summary>
+    
+      <category term="java并发编程的艺术" scheme="http://yoursite.com/categories/java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E8%89%BA%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git remote的用法</title>
+    <link href="http://yoursite.com/2016/04/16/git-remote%E7%9A%84%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/04/16/git-remote的用法/</id>
+    <published>2016-04-15T16:21:10.000Z</published>
+    <updated>2016-04-15T17:02:26.214Z</updated>
+    
+    <content type="html">&lt;p&gt;##查看当前远程仓库&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;git remote&lt;br&gt;不带参数，列出已经存在的远程分支  &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git remote   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;git remote -v | –verbose&lt;br&gt;列出详细信息，在每个远程分支的名字后面列出远程url  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git remote -v  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin git@github.com:cbirdq/learngit.git (fetch)  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin git@github.com:cbirdq/learngit.git （push)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;添加远程仓库&quot;&gt;&lt;a href=&quot;#添加远程仓库&quot; class=&quot;headerlink&quot; title=&quot;添加远程仓库&quot;&gt;&lt;/a&gt;添加远程仓库&lt;/h2&gt;&lt;p&gt;git remote add [shortname]&lt;br&gt;要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git remote  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git remote add pp git://github.com/cbirdq/iprinter.git  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git remote -v  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pp git://github.com/cbirdq/iprinter.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;现在就可以通过字符串pp代表远程仓库了，比如说要抓取本地仓库没有的信息，可以运行 git fetch pp.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git fetch pp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##查看当前远程仓库&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;git remote&lt;br&gt;不带参数，列出已经存在的远程分支  &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OpenLayers3之Map</title>
+    <link href="http://yoursite.com/2016/04/15/OpenLayers3%E4%B9%8BMap/"/>
+    <id>http://yoursite.com/2016/04/15/OpenLayers3之Map/</id>
+    <published>2016-04-14T16:25:27.000Z</published>
+    <updated>2016-04-14T17:16:10.914Z</updated>
+    
+    <content type="html">&lt;p&gt;## &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;## &lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="OpenLayers3" scheme="http://yoursite.com/categories/OpenLayers3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OpenLayers3简介</title>
+    <link href="http://yoursite.com/2016/04/14/OpenLayers3%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2016/04/14/OpenLayers3简介/</id>
+    <published>2016-04-14T02:46:01.000Z</published>
+    <updated>2016-04-14T16:24:20.559Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h2&gt;&lt;p&gt;OpenLayers3(OL3)引入了现代的设计模式，重写了OpenLayers的网页地图库。&lt;br&gt;OL3初始版本的目标是支持版本2提供的大部分功能，采用了大量的商业或者免费的图层资源，最流行的开源vector数据格式。和版本2一样，OL3也支持任何的数据映射方式，同时它还提供了一些额外的功能，例如旋转和动画效果。在之后的版本中，OL3还会加入一些主要的新功能，如3D地图的显示，或者使用WebGL快速显示大量矢量数据。  &lt;/p&gt;
+&lt;h2 id=&quot;闭包工具&quot;&gt;&lt;a href=&quot;#闭包工具&quot; class=&quot;headerlink&quot; title=&quot;闭包工具&quot;&gt;&lt;/a&gt;闭包工具&lt;/h2&gt;&lt;p&gt;OL3是基于google闭包工具集开发的，它大量使用了闭包库。  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h2&gt;&lt;p&gt;OpenLayers3(OL3)引入了现代的设计模式，重写了OpenLayers的网页地图库。&lt;br&gt;OL3初始版本的目标是支持版本2提供的
+    
+    </summary>
+    
+      <category term="OpenLayers3" scheme="http://yoursite.com/categories/OpenLayers3/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>qq互联</title>
