@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[快速排序]]></title>
+      <url>http://yoursite.com/2016/06/03/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span>[] theArray = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">long</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">	&#125;			</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		recQuickSort(<span class="number">0</span>, theArray.length - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">recQuickSort</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(left &gt;= right)</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">int</span> p = partition(left, right);</span><br><span class="line">		recQuickSort(left, p - <span class="number">1</span>);</span><br><span class="line">		recQuickSort(p + <span class="number">1</span>, right);</span><br><span class="line">	&#125;</span><br><span class="line"> 	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> pivot = theArray[right];</span><br><span class="line">		<span class="keyword">int</span> leftptr = left, rightptr = right - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">while</span>(theArray[++leftptr] &lt; pivot);</span><br><span class="line">			<span class="keyword">while</span>(theArray[--rightptr] &gt; pivot);</span><br><span class="line">			<span class="keyword">if</span>(leftptr &gt;= rightptr)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			swap(leftptr, rightptr);</span><br><span class="line">		&#125;</span><br><span class="line">		swap(leftPtr, right);</span><br><span class="line">		<span class="keyword">return</span> leftptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> tmp = theArray[left];</span><br><span class="line">		theArray[left] = theArray[right];		</span><br><span class="line">		theArray[right] = tmp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[String源码解读]]></title>
+      <url>http://yoursite.com/2016/06/02/String%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[位排序]]></title>
+      <url>http://yoursite.com/2016/06/02/%E4%BD%8D%E6%8E%92%E5%BA%8F/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常见的简单排序算法]]></title>
+      <url>http://yoursite.com/2016/06/02/%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>本文介绍几种常见的简单排序算法，包括冒泡排序，选择排序和插入排序。<a id="more"></a></p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序算法的思路：<br>算法进行n-1趟排序，每一趟排序从未排序数组的起始位置开始，通过比较和交换的方式将最大值排到未排序数组的尾部。<br>比较和交换的规则：</p>
+<ol>
+<li>比较两个元素的值</li>
+<li>如果左边元素的值大于右边元素的值，则交换两个元素的位置；</li>
+<li><p>向右移动第一个位置，接着比较两个元素的值 </p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">long</span>[] theArray)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> out = <span class="number">1</span>, in = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> tmp;</span><br><span class="line">	<span class="keyword">for</span>(; out &lt; theArray.length ; out++) &#123; <span class="comment">//算法进行n-1趟排序</span></span><br><span class="line">		<span class="keyword">for</span>(; in &lt; theArray.length - out; in++) &#123; </span><br><span class="line">			<span class="keyword">if</span>(theArray[in] &gt; theArray[in + <span class="number">1</span>]) &#123;</span><br><span class="line">				tmp = theArray[in];</span><br><span class="line">				theArray[in] = theArray[in + <span class="number">1</span>];</span><br><span class="line">				theArray[in + <span class="number">1</span>] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序算法的思路：<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">long</span>[] theArray)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> out, in, max;</span><br><span class="line">	<span class="keyword">long</span> tmp;</span><br><span class="line">	<span class="keyword">for</span>(out = theArray.length - <span class="number">1</span>; out &gt; <span class="number">0</span>; out--) &#123; <span class="comment">//n-1趟排序</span></span><br><span class="line">		max = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(in = <span class="number">0</span>; in &lt;= out; in++ ) <span class="comment">//每一趟找出最大值的下标</span></span><br><span class="line">			max = in;</span><br><span class="line">		<span class="keyword">if</span>(theArray[in] &gt; theArray[max]) &#123; <span class="comment">//在一趟排序的最后，将最大值放到数组的尾部</span></span><br><span class="line">			tmp = theArray[in];</span><br><span class="line">			theArray[in] = theArray[max];	</span><br><span class="line">			theArray[max] = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序算法的思路：<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">long</span>[] theArray)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> out, in, ptr;</span><br><span class="line">	<span class="keyword">long</span> current;</span><br><span class="line">	<span class="keyword">for</span>(out = <span class="number">1</span>; out &lt; theArray.length; i++) &#123;</span><br><span class="line">		current = theArray[out];</span><br><span class="line">		ptr = out - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(ptr &gt;= <span class="number">0</span> &amp;&amp; current &lt; theArray[p]) &#123;</span><br><span class="line">			theArray[ptr + <span class="number">1</span>] = theArray[ptr];</span><br><span class="line">			ptr --;</span><br><span class="line">		&#125;</span><br><span class="line">		theArray[ptr + <span class="number">1</span>] = current;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[中文分词]]></title>
+      <url>http://yoursite.com/2016/06/02/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo你的博客]]></title>
+      <url>http://yoursite.com/2016/06/02/hexo-your-blog/</url>
+      <content type="html"><![CDATA[<p><strong>hexo</strong>出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。搭建过程你或许觉得有那么点小繁琐，但一旦搭建完成，写文章是极简单，极舒服的。只需要几个简单命令，你就可以完成一切。<a id="more"></a></p>
+<pre><code>hexo n #写文章
+hexo g #生成
+hexo d #部署 # 可与hexo g合并为 hexo d -g
+</code></pre><p>下面逐步介绍Hexo+GitHub博客搭建过程。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装Node和Git"><a href="#安装Node和Git" class="headerlink" title="安装Node和Git"></a>安装Node和Git</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官网</a><br><a href="https://git-scm.com/" target="_blank" rel="external">Git 官网</a></p>
+<h3 id="注册和配置GitHub"><a href="#注册和配置GitHub" class="headerlink" title="注册和配置GitHub"></a>注册和配置GitHub</h3><ol>
+<li>首先注册一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a> 帐号</li>
+<li>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』</li>
+</ol>
+<h3 id="生成SSH密钥"><a href="#生成SSH密钥" class="headerlink" title="生成SSH密钥"></a>生成SSH密钥</h3><ol>
+<li>首先设置你的用户名密码：<pre><code>git config --global user.email &quot;123456789@qq.com&quot;
+git config --global user.name &quot;cbirdq&quot;
+</code></pre></li>
+<li>生成密钥：<pre><code>ssh-keygen -t rsa -C &quot;123456789@qq.com&quot;
+</code></pre></li>
+<li>添加SSH公钥到GitHub中：『Account settings -&gt; SSH Keys -&gt; Add SSH Key』</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><pre><code>npm install -g hexo
+</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>mkdir blog #创建博客根目录
+cd blog #进入根目录
+hexo init #初始化
+</code></pre><p>好啦，至此，全部安装工作已经完成！</p>
+<h2 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h2><p>在博客根目录下，执行如下命令，生成静态页面至 blog\public\ 目录。</p>
+<pre><code>hexo generate
+</code></pre><p>当你修改文章Tag或内容，不能正确重新生成内容，可以删除 hexo\db.json 后重试，还不行就到 public 目录删除对应的文件，重新生成。</p>
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><p>执行如下命令，启动本地服务，进行文章预览调试。</p>
+<pre><code>hexo server
+</code></pre><p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以看到效果。如果4000端口被占用，导致网页无法显示，可以通过以下命令指定其他端口。</p>
+<pre><code>hexo server -p 5000
+</code></pre><h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>执行new命令，生成指定名称的文章至 blog\source_posts\postName.md 。</p>
+<pre><code>hexo new [layout] &quot;postName&quot; #新建文章
+</code></pre><p>其中layout是可选参数，默认值为post。有哪些layout呢，请到 scaffolds 目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是 hexo\scaffolds\post.md</p>
+<pre><code>title: { { title } }
+date: { { date } }
+tags:
+---
+</code></pre><p>请注意，大括号与大括号之间我多加了个空格，否则会被转义，不能正常显示。<br>我想添加categories，以免每次手工输入，只需要修改这个文件添加一行，如下：</p>
+<pre><code>title: { { title } }
+date: { { date } }
+categories: 
+tags: 
+---
+</code></pre><p>postName是md文件的名字，同时也出现在你文章的URL中，postName如果包含空格，必须用”将其包围，postName可以为中文。</p>
+<p>注意，所有文件：后面都必须有个空格，不然会报错。<br>看一下刚才生成的文件 blog\source_posts\postName.md ，内容如下：</p>
+<pre><code>title: postName #文章页面上的显示名称，可以任意修改，不会出现在URL中
+date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改
+categories: #文章分类目录，可以为空，注意:后面有个空格
+tags: #文章标签，可空，多标签请用格式[tag1,tag2,tag3]，注意:后面有个空格
+---
+</code></pre><p>这里开始使用<a href="/2016/06/01/markdown-grammar/#more">markdown语法</a>格式输入你的正文。</p>
+<h3 id="photos"><a href="#photos" class="headerlink" title="photos"></a>photos</h3><p>在你的文章*.md文件的头上添加 photos 项，然后一行行添加你要展示的照片：</p>
+<pre><code>layout: photo
+title: 我的阅历
+date: 2085-01-16 07:33:44
+tags: [hexo]
+photos:
+    - http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg
+    - http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg
+</code></pre><p>经过测试，文件头上的 layout: photo 可以省略。<br>不想每次都手动添加怎么办？同样的，打开您的 hexo\scaffolds\photo.md</p>
+<pre><code>layout: { { layout } }
+title: { { title } }
+date: { { date } }
+tags: 
+photos: 
+    - 
+---
+</code></pre><p>然后每次可以执行带layout的new命令生成照片文章：</p>
+<pre><code>hexo new photo &quot;photoPostName&quot; #新建照片文章
+</code></pre><h3 id="description"><a href="#description" class="headerlink" title="description"></a>description</h3><p>markdown文件头中也可以添加description，以覆盖全局配置文件中的description内容，请参考下文 _config.yml 的介绍。</p>
+<pre><code>title: hexo你的博客
+date: 2013-11-22 17:11:54
+categories: default
+tags: [hexo]
+description: 你对本页的描述
+---
+</code></pre><p>hexo默认会处理全部markdown和html文件，如果不想让hexo处理你的文件，可以在文件头中加入layout: false。</p>
+<h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><p>在需要显示摘要的地方添加如下代码即可：</p>
+<pre><code>以上是摘要
+    &lt;!--more--&gt;
+以下是余下全文
+</code></pre><p>more以上内容即是文章摘要，在主页显示，more以下内容点击『&gt; Read More』链接打开全文才显示。</p>
+<h3 id="文件的编码格式"><a href="#文件的编码格式" class="headerlink" title="文件的编码格式"></a>文件的编码格式</h3><p>hexo中所有文件的编码格式均是UTF-8。</p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><p>网上有很多开源的主题，基本都托管在github上，安装主题的方法就是一句git命令：</p>
+<pre><code>cd blog
+git clone https://github.com/iissnan/hexo-theme-next themes/NexT
+</code></pre><p>目录是否是NexT无所谓，只要与_config.yml文件一致即可。<br>安装完成后，打开 hexo_config.yml ，修改主题为 NexT</p>
+<pre><code>theme: NexT
+</code></pre><h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><pre><code>cd themes/NexT
+git pull
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown常用语法]]></title>
+      <url>http://yoursite.com/2016/06/01/markdown-grammar/</url>
+      <content type="html"><![CDATA[<p>Markdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式.Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。<br><a id="more"></a></p>
+<h2 id="文章标题设置"><a href="#文章标题设置" class="headerlink" title="文章标题设置"></a>文章标题设置</h2><p>在文字开头加上<font color="red"> # </font>，<font color="red"> # </font>的个数表示标题的级数。（一共只有1~6级标题，1级标题字体最大）</p>
+<pre><code>##文章标题设置
+</code></pre><h2 id="块注释"><a href="#块注释" class="headerlink" title="块注释"></a>块注释</h2><p>在文字开头加上<font color="red"> &gt; </font>表示块级注释</p>
+<pre><code>&gt; 我是块注释
+</code></pre><blockquote>
+<p>这是块注释</p>
+</blockquote>
+<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>使用一对<font color="red"> * </font>将需要设置为斜体文字包含在里面</p>
+<pre><code>*我是斜体*
+</code></pre><p><em>我是斜体</em></p>
+<h2 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h2><p>使用一对<font color="red"> ** </font>将需要设置为粗体的文字包含在里面      </p>
+<pre><code>**我是粗体**
+</code></pre><p><strong>我是粗体</strong></p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>在文字开头添加<font color="red"> * </font>，并按空格键，实现无序列表</p>
+<pre><code>* 我是无序列表项1
+* 我是无序列表项2
+</code></pre><ul>
+<li>我是无序列表项1</li>
+<li>我是无序列表项2</li>
+</ul>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>在数字后面直接跟上<font color="red"> . </font>，并按空格键，实现有序列表</p>
+<pre><code>1. 我是有序列表项1
+2. 我是有序列表项2
+</code></pre><ol>
+<li>我是有序列表项1</li>
+<li>我是有序列表项2</li>
+</ol>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
+<li><p>内联方式：<font color="red">[text](url)</font></p>
+<pre><code>[我是链接](https://www.google.com)
+</code></pre><p><a href="https://www.google.com" target="_blank" rel="external">我是链接</a></p>
+</li>
+<li><p>引用方式：<font color="red">[text][id]</font> [id]: url string</p>
+<pre><code>[我是引用][1]  [1]: https://www.google.com
+</code></pre><p><a href="/images/smile2.png" title="开心兔">我是引用</a></p>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li>内联方式：<font color="red">![alt text](path “Title”)</font><pre><code>![我是图片](/images/smile2.png &quot;开心兔&quot;) #注意：这里根目录指的是public目录
+</code></pre><img src="/images/smile2.png" alt="我是图片" title="开心兔"></li>
+<li>引用方式：<font color="red">![alt text][id]</font> [id]: path string<br><img src="/images/smile2.png" alt="我是图片" title="开心兔"></li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>使用Tab键或者四个空格</p>
+<pre><code>code here
+</code></pre><h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>在空白行处添加三条<font color="red"> - </font></p>
+<pre><code>part 1
+___
+part 2
+___
+part 3
+</code></pre><p>part 1</p>
+<hr>
+<p>part 2</p>
+<hr>
+<p>part 3</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo常用命令]]></title>
+      <url>http://yoursite.com/2016/06/01/hexo-command/</url>
+      <content type="html"><![CDATA[<h2 id="hexo-简写"><a href="#hexo-简写" class="headerlink" title="hexo 简写"></a>hexo 简写</h2><pre><code>hexo n &quot;我的博客&quot; #新建文章，等价于 heox new &quot;我的博客&quot;
+hexo p #草稿，等价于 hexo publish
+hexo g #生成静态网页，等价于 hexo generate 
+hexo s #启动服务预览，等价于 hexo server
+hexo d #部署，等价于 hexo deploy
+</code></pre><a id="more"></a>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><pre><code>hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+
+hexo clean #清除缓存 网页正常情况下可以忽略此条命令
+hexo g #生成静态网页
+hexo d #开始部署
+</code></pre><h2 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h2><pre><code>hexo generate #使用 Hexo 生成静态文件快速而且简单
+hexo generate --watch #监视文件变动
+</code></pre><h2 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h2><pre><code>#两个命令的作用是相同的
+hexo generate --deploy
+hexo deploy --generate
+</code></pre><h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><pre><code>hexo publish [layout] &lt;title&gt;
+</code></pre><h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><pre><code>hexo new &quot;postName&quot; #新建文章
+hexo new page &quot;pageName&quot; #新建页面
+
+hexo new [layout] &lt;title&gt;
+hexo new photo &quot;My Gallery&quot;
+hexo new &quot;Hello World&quot; --lang tw
+</code></pre><h2 id="设置文章摘要"><a href="#设置文章摘要" class="headerlink" title="设置文章摘要"></a>设置文章摘要</h2><pre><code>#摘要部分
+&lt;!--more--&gt; 
+#以下是余下全文 
+</code></pre><p>##写作<br>    hexo new page <title><br>    hexo new post <title></title></title></p>
+<h2 id="推送到服务器上"><a href="#推送到服务器上" class="headerlink" title="推送到服务器上"></a>推送到服务器上</h2><pre><code>hexo n #写文章
+hexo g #生成
+hexo d #部署 #可与hexo g合并为 hexo d -g
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[volatile的实现原理]]></title>
+      <url>http://yoursite.com/2016/05/10/volatile/</url>
+      <content type="html"><![CDATA[<p>java中的并发机制依赖于JVM的实现和CPU的指令。java并发机制包括volatile，synchronized和原子操作。本文将探索volatile的底层实现原理。<br><a id="more"></a></p>
+<p>在并发编程中synchronized和volatile都扮演着重要的角色，volatile是轻量级的synchronized，它在多处理器开发中保证了共享变量的<strong>可见性</strong>。可见性是指，一个线程修改共享变量时，另外一个线程能读到这个修改的值。volatile变量修饰符如果使用恰当，会比synchronized效率更高，因为它不会引起线程上下文切换和调度。  </p>
+<p>如果一个字段被声明称volatile，那么<strong>java线程内存模型</strong>会确保所有的线程看到这个变量的值是一致的。</p>
+<h2 id="volatile在硬件层面上的是如何保证共享变量的可见性的？"><a href="#volatile在硬件层面上的是如何保证共享变量的可见性的？" class="headerlink" title="volatile在硬件层面上的是如何保证共享变量的可见性的？"></a>volatile在硬件层面上的是如何保证共享变量的可见性的？</h2><p>为了提高处理速度，cpu一般不和内存直接交互，而是将内存中的数据读到缓存里，然后再进行操作，操作完了不知道何时会写回到内存中。当对一个volatile修饰的共享变量进行写操作时，JVM就会向处理器发送一条<strong>Lock前缀指令</strong>，将这个变量所在的缓存行写回到内存中。但是，就算写回到内存，其他处理器的缓存中保存的数据仍然是旧的。所以在多处理器下，为了保证各个处理器的缓存是一致的，就会实现一套<strong>缓存一致性协议：</strong>每个处理器通过嗅探在总线上传播的数据来检查自身缓存的值是否过期，当处理器发现自己缓存行对应的内存地址被修改，就会将当前缓存行设置成无效。当处理器再次对这个数据进行修改时，会重新从系统内存中把数据读到处理器缓存中。</p>
+<h3 id="volatile的两条实现原则："><a href="#volatile的两条实现原则：" class="headerlink" title="volatile的两条实现原则："></a>volatile的两条实现原则：</h3><ol>
+<li>Lock前缀指令会引起处理器缓存回写到内存。</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[并发编程的挑战]]></title>
+      <url>http://yoursite.com/2016/04/26/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E6%8C%91%E6%88%98/</url>
+      <content type="html"><![CDATA[<p>本文主要介绍几种并发编程可能会遇到的挑战，及其解决方案。<br><a id="more"></a>  </p>
+<h2 id="1-上下文切换"><a href="#1-上下文切换" class="headerlink" title="1. 上下文切换"></a>1. 上下文切换</h2><p>cpu通过时间片分配算法来循环执行线程，当前线程时间片用完后就会切换到下一线程。但是在切换之前，必须先保存当前线程的上下文，然后再加载下一个线程的上下文，称为上下文的切换。频繁的上下文切换会导致程序的执行效率低下。</p>
+<p><strong>解决方案：</strong>减少上下文切换的方法有<strong>无锁并发编程，CAS算法，使用最少线程，协程</strong></p>
+<ul>
+<li>无锁并发编程：多线程在竞争锁时会引起上下文的切换。所以多线程在处理数据时，可以用一些方法来避免使用锁，比如讲数据的ID按照Hash算法取模分段，不同的线程处理不同段的数据。  </li>
+<li>CAS算法：java的原子并发包使用的是CAS算法来更新数据，不需要加锁。</li>
+<li>使用最少线程：避免创建不需要的线程，比如任务很少，但是创建了很多线程，这就会导致大量线程都处于等待状态。</li>
+<li>协程：在单线程里实现多任务的调度，并在单线程里维持多任务间的切换。  </li>
+</ul>
+<h2 id="2-死锁"><a href="#2-死锁" class="headerlink" title="2. 死锁"></a>2. 死锁</h2><p>死锁产生的一种情况就是两个线程之间互相等待对方释放锁。<br><strong>解决方案：</strong></p>
+<ul>
+<li>尽量避免一个线程同时获取多个锁</li>
+<li>避免线程在锁内部同时占用多个资源，尽量保证一个锁只占用一个资源</li>
+<li>尝试使用定时锁，使用lock.tryLock(timeout)来代替内部锁机制</li>
+<li>对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。</li>
+</ul>
+<h2 id="3-资源限制的挑战"><a href="#3-资源限制的挑战" class="headerlink" title="3. 资源限制的挑战"></a>3. 资源限制的挑战</h2><p>资源限制是指在进行并发编程时，程序的执行速度受限于计算机硬件资源或软件资源。例如服务器的带宽只有2Mb/s，某个资源的下载速度是1Mb/s，系统启动10线程下载资源，下载速度并不会达到10Mb/s。硬件资源的限制有带宽的上传/下载速度，硬盘读写速度和cpu的处理速度等，软件资源的限制有数据库连接数和socket连接数等。<br><strong>解决方案：</strong></p>
+<ul>
+<li>对于硬件资源的限制，可以考虑使用集群并行执行程序</li>
+<li>对于软件资源的限制，可以考虑使用资源池将资源复用，比如数据库连接池等。</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git remote的用法]]></title>
+      <url>http://yoursite.com/2016/04/16/git-remote/</url>
+      <content type="html"><![CDATA[<p>本文主要介绍git remote命令的用法。<br><a id="more"></a></p>
+<p>##查看当前远程仓库</p>
+<ol>
+<li><p>git remote<br>不带参数，列出已经存在的远程分支  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote   </span><br><span class="line">origin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git remote -v | –verbose<br>列出详细信息，在每个远程分支的名字后面列出远程url  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v  </span><br><span class="line">origin git@github.com:cbirdq/learngit.git (fetch)  </span><br><span class="line">origin git@github.com:cbirdq/learngit.git （push)</span><br></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><p>git remote add [shortname]<br>要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git remote  </span><br><span class="line">origin  </span><br><span class="line">$ git remote add pp git://github.com/cbirdq/iprinter.git  </span><br><span class="line">$ git remote -v  </span><br><span class="line">pp git://github.com/cbirdq/iprinter.git</span><br></pre></td></tr></table></figure></p>
+<p>现在就可以通过字符串pp代表远程仓库了，比如说要抓取本地仓库没有的信息，可以运行 git fetch pp.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch pp</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenLayers3之Map]]></title>
+      <url>http://yoursite.com/2016/04/15/OpenLayers3%E4%B9%8BMap/</url>
+      <content type="html"><![CDATA[<p>未完待续<a id="more"></a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenLayers3简介]]></title>
+      <url>http://yoursite.com/2016/04/14/OpenLayers3%E7%AE%80%E4%BB%8B/</url>
+      <content type="html"><![CDATA[<p>OpenLayers 是一个专为Web GIS 客户端开发提供的JavaScript 类库包，用于实现标准格式发布的地图数据访问。OpenLayers 支持的地图来源包括Google Maps、Yahoo、 Map、微软Virtual Earth 等，用户还可以用简单的图片地图作为背景图，与其他的图层在OpenLayers 中进行叠加，在这一方面OpenLayers提供了非常多的选择。<a id="more"></a>在操作方面，OpenLayers 除了可以在浏览器中帮助开发者实现地图浏览的基本效果，比如放大（Zoom In）、缩小（Zoom Out）、平移（Pan）等常用操作之外，还可以进行选取面、选取线、要素选择、图层叠加等不同的操作，甚至可以对已有的OpenLayers 操作和数据支持类型进行扩充，为其赋予更多的功能。同时，在OpenLayers提供的类库当中，它还使用了类库Prototype.js 和Rico 中的部分组件，为地图浏览操作客户端增加Ajax 效果。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>OpenLayers3(OL3)引入了现代的设计模式，重写了OpenLayers的网页地图库。<br>OL3初始版本的目标是支持版本2提供的大部分功能，采用了大量的商业或者免费的图层资源，最流行的开源vector数据格式。和版本2一样，OL3也支持任何的数据映射方式，同时它还提供了一些额外的功能，例如旋转和动画效果。在之后的版本中，OL3还会加入一些主要的新功能，如3D地图的显示，或者使用WebGL快速显示大量矢量数据。  </p>
+<h2 id="闭包工具"><a href="#闭包工具" class="headerlink" title="闭包工具"></a>闭包工具</h2><p>OL3是基于google闭包工具集开发的，它大量使用了闭包库。  </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[qq互联]]></title>
+      <url>http://yoursite.com/2016/04/12/qq%E4%BA%92%E8%81%94/</url>
+      <content type="html"><![CDATA[<p>QQ互联开放平台为第三方网站提供了丰富的API。第三方网站接入QQ互联开放平台后，即可通过调用平台提供的API实现用户使用QQ账号登陆网站功能，且可以获取到腾讯QQ用户的相关信息。<a id="more"></a>  </p>
+<h2 id="网站接入流程"><a href="#网站接入流程" class="headerlink" title="网站接入流程"></a>网站接入流程</h2><ol>
+<li><p>首先前往<a href="http://connect.qq.com" target="_blank" rel="external">QQ互联开放平台</a>进行开发者注册。</p>
+</li>
+<li><p>注册完成后，进行网站接入申请，获取appid和appkey，然后进入开发环节。</p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git简介]]></title>
+      <url>http://yoursite.com/2016/04/10/git-introduction/</url>
+      <content type="html"><![CDATA[<p>git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。<br><a id="more"></a></p>
+<h2 id="git的优势？"><a href="#git的优势？" class="headerlink" title="git的优势？"></a>git的优势？</h2><p><strong>1. 版本库本地化，支持离线提交，相对独立，不影响协同开发。</strong><br>每个开发者都拥有自己的版本控制库，在自己的版本控制库上可以任意地执行提交代码、回滚代码、创建分支、归并分支等操作。因为是在自己的版本库上操作，所以不用担心会影响到其他的开发者。<br><strong>2. 更少的仓库污染。</strong><br>git对于每个工程只会产生一个.git目录，这个工程所有的版本控制信息都在.git目录下，不会像svn那样在每个目录下都产生.svn目录。<br><strong>3. 把内容按元数据方式存储，完整克隆版本库。</strong><br>所有的版本信息都在.git目录中，它是处于你的机器上的一个克隆版的版本库，它拥有中心版本库所有的东西，例如标签、分支、版本记录等。<br><strong>4. 支持快速切换分支，且合并速度快。</strong><br><strong>5. 分布式版本库，无单点故障，内容完整性好。</strong><br>内容存储采用的是SHA1-哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。  </p>
+<h2 id="分布式VS集中式"><a href="#分布式VS集中式" class="headerlink" title="分布式VS集中式"></a>分布式VS集中式</h2><p>集中式版本控制系统，版本库是集中放在中央服务器上的，而干活时用的都是各自的电脑，所有要先从中央服务器上取得最新的版本，然后开始干活，完了再把代码推送到中央服务器上。集中式版本控制系统最大的毛病就是必须联网才能工作。如果是局域网还好，带宽够大，速度够快，可是如果在互联网上，就可能网速很慢。</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

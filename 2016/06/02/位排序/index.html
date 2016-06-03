@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -47,13 +47,25 @@
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -64,7 +76,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,排序,数据结构," />
 
 
 
@@ -82,26 +94,23 @@
 
 
 
-<meta name="description" content="title: 一、 git简介date: 2016-04-10 23:12:29category: “git学习笔记”
-tags: “git”  什么是git?git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。">
+<meta name="description" content="While there is life there is hope.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cbirdq`s blog">
-<meta property="og:url" content="http://yoursite.com/2016/04/10/git简介/index.html">
+<meta property="og:title" content="位排序">
+<meta property="og:url" content="http://yoursite.com/2016/06/02/位排序/index.html">
 <meta property="og:site_name" content="Cbirdq`s blog">
-<meta property="og:description" content="title: 一、 git简介date: 2016-04-10 23:12:29category: “git学习笔记”
-tags: “git”  什么是git?git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。">
-<meta property="og:updated_time" content="2016-04-11T16:11:36.648Z">
+<meta property="og:description" content="While there is life there is hope.">
+<meta property="og:updated_time" content="2016-06-02T15:00:09.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cbirdq`s blog">
-<meta name="twitter:description" content="title: 一、 git简介date: 2016-04-10 23:12:29category: “git学习笔记”
-tags: “git”  什么是git?git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。">
+<meta name="twitter:title" content="位排序">
+<meta name="twitter:description" content="While there is life there is hope.">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -112,7 +121,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
   };
 </script>
 
-  <title>  | Cbirdq`s blog </title>
+  <title> 位排序 | Cbirdq`s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,9 +225,32 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -252,7 +284,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
             
             
               
-                
+                位排序
               
             
           </h1>
@@ -264,19 +296,38 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T23:12:29+08:00" content="2016-04-10">
-              2016-04-10
+            <time itemprop="dateCreated" datetime="2016-06-02T22:58:51+08:00" content="2016-06-02">
+              2016-06-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/10/git简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/git简介/" itemprop="commentsCount"></span>
+                <a href="/2016/06/02/位排序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/位排序/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,12 +350,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
       
 
       
-        <hr>
-<p>title: 一、 git简介<br>date: 2016-04-10 23:12:29<br>category: “git学习笔记”</p>
-<h2 id="tags-“git”"><a href="#tags-“git”" class="headerlink" title="tags: “git”  "></a>tags: “git”  </h2><h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git?"></a>什么是git?</h2><p>git是一个开源的分布式版本控制系统，由Linus Torvalds开发实现（貌似只花了两周的时间，厉害！）。<br><a id="more"></a></p>
-<h2 id="git的优势？"><a href="#git的优势？" class="headerlink" title="git的优势？"></a>git的优势？</h2><p><strong>1. 版本库本地化，支持离线提交，相对独立，不影响协同开发。</strong><br>每个开发者都拥有自己的版本控制库，在自己的版本控制库上可以任意地执行提交代码、回滚代码、创建分支、归并分支等操作。因为是在自己的版本库上操作，所以不用担心会影响到其他的开发者。<br><strong>2. 更少的仓库污染。</strong><br>git对于每个工程只会产生一个.git目录，这个工程所有的版本控制信息都在.git目录下，不会像svn那样在每个目录下都产生.svn目录。<br><strong>3. 把内容按元数据方式存储，完整克隆版本库。</strong><br>所有的版本信息都在.git目录中，它是处于你的机器上的一个克隆版的版本库，它拥有中心版本库所有的东西，例如标签、分支、版本记录等。<br><strong>4. 支持快速切换分支，且合并速度快。</strong><br><strong>5. 分布式版本库，无单点故障，内容完整性好。</strong><br>内容存储采用的是SHA1-哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。  </p>
-<h2 id="分布式VS集中式"><a href="#分布式VS集中式" class="headerlink" title="分布式VS集中式"></a>分布式VS集中式</h2><p>集中式版本控制系统，版本库是集中放在中央服务器上的，而干活时用的都是各自的电脑，所有要先从中央服务器上取得最新的版本，然后开始干活，完了再把代码推送到中央服务器上。集中式版本控制系统最大的毛病就是必须联网才能工作。如果是局域网还好，带宽够大，速度够快，可是如果在互联网上，就可能网速很慢。  </p>
-
+        
       
     </div>
     
@@ -322,17 +368,31 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/排序/" rel="tag">#排序</a>
+          
+            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/02/常用的排序算法/" rel="next" title="常见的简单排序算法">
+                <i class="fa fa-chevron-left"></i> 常见的简单排序算法
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/12/qq互联/" rel="prev" title="qq互联">
-                qq互联 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/02/String源码解读/" rel="prev" title="String源码解读">
+                String源码解读 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -348,10 +408,10 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/10/git简介/"
-     data-title=""
+        <div class="ds-share flat" data-thread-key="2016/06/02/位排序/"
+     data-title="位排序"
      data-content=""
-     data-url="http://yoursite.com/2016/04/10/git简介/">
+     data-url="http://yoursite.com/2016/06/02/位排序/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -378,8 +438,8 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/10/git简介/"
-           data-title="" data-url="http://yoursite.com/2016/04/10/git简介/">
+      <div class="ds-thread" data-thread-key="2016/06/02/位排序/"
+           data-title="位排序" data-url="http://yoursite.com/2016/06/02/位排序/">
       </div>
     
   </div>
@@ -424,7 +484,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -432,12 +492,19 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -481,6 +548,15 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
         
         <div class="links-of-blogroll motion-element">
           
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" target="_blank">NexT</a>
+                </li>
+              
+            </ul>
+          
         </div>
 
       </section>
@@ -492,7 +568,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-“git”"><span class="nav-number">1.</span> <span class="nav-text">tags: “git”  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是git"><span class="nav-number">2.</span> <span class="nav-text">什么是git?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的优势？"><span class="nav-number">3.</span> <span class="nav-text">git的优势？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式VS集中式"><span class="nav-number">4.</span> <span class="nav-text">分布式VS集中式</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -525,7 +601,7 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -591,6 +667,13 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
@@ -633,6 +716,135 @@ tags: “git”  什么是git?git是一个开源的分布式版本控制系统�
 
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
